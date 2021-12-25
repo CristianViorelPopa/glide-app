@@ -1,8 +1,8 @@
 import streamlit as st
 
-from PIL import Image
-from IPython.display import display
-import torch as th
+# from PIL import Image
+# from IPython.display import display
+# import torch as th
 
 from glide_text2im.download import load_checkpoint
 from glide_text2im.model_creation import (
@@ -26,7 +26,7 @@ def setup_glide_model():
     model.eval()
     model.to(device)
     model.load_state_dict(load_checkpoint('base', device))
-    st.write('total base parameters', sum(x.numel() for x in model.parameters()))
+    # st.write('total base parameters', sum(x.numel() for x in model.parameters()))
     return model
 
 
@@ -40,7 +40,8 @@ def setup_glide_upsampler_model():
     model_up.eval()
     model_up.to(device)
     model_up.load_state_dict(load_checkpoint('upsample', device))
-    st.write('total upsampler parameters', sum(x.numel() for x in model_up.parameters()))
+    # st.write('total upsampler parameters', sum(x.numel() for x in model_up.parameters()))
+    return model_up
 
 
 # initial setup
