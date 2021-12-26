@@ -47,3 +47,5 @@ def setup_glide_upsampler_model():
 with st.spinner(text='In progress'):
     model = setup_glide_model()
     # model_up = setup_glide_upsampler_model()
+
+st.write('Success!!')
