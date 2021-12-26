@@ -36,9 +36,9 @@ def setup_glide_upsampler_model():
     options_up['use_fp16'] = False
     options_up['timestep_respacing'] = 'fast27'  # use 27 diffusion steps for very fast sampling
     model_up, diffusion_up = create_model_and_diffusion(**options_up)
-    model_up.eval()
-    model_up.to(device)
-    model_up.load_state_dict(load_checkpoint('upsample', device))
+    # model_up.eval()
+    # model_up.to(device)
+    # model_up.load_state_dict(load_checkpoint('upsample', device))
     # st.write('total upsampler parameters', sum(x.numel() for x in model_up.parameters()))
     return model_up
 
